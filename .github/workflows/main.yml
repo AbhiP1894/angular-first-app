@@ -45,6 +45,10 @@ jobs:
 
     - name: Snyk Scan
       run: snyk test --json > snyk-report.json
+    - name: Debug
+      run: |
+            ls -al
+            cat snyk-report.json
 
   code-scanning-upload:
     runs-on: ubuntu-latest
