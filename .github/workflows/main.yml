@@ -44,11 +44,11 @@ jobs:
       run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
     - name: Snyk Scan
-      run: snyk test --json > snyk-report.json
-    - name: Debug
-      run: |
-            ls -al
-            cat snyk-report.json
+      run: snyk test --report --org=cybage-poc
+    # - name: Debug
+    #   run: |
+    #         ls -al
+    #         cat snyk-report.json
 
   # code-scanning-upload:
   #   runs-on: ubuntu-latest
@@ -56,7 +56,7 @@ jobs:
   #   needs: snyk-scan
 
   #   steps:
-    - name: Upload Snyk Results to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: snyk-report.json
+    # - name: Upload Snyk Results to GitHub Code Scanning
+    #   uses: github/codeql-action/upload-sarif@v2
+    #   with:
+    #     sarif_file: snyk-report.json
