@@ -1,0 +1,8 @@
+name: angular-snyk-demo
+on: push
+jobs: 
+ build_and_deploy:
+ runs-on: ubuntu-latest
+ steps:
+  - name: Build
+    run: ng build
